@@ -1,0 +1,114 @@
+[
+  {
+    "id": "MA001",
+    "subject": "Mental Ability",
+    "topic": "Series",
+    "question": "3, 6, 12, 24, ?",
+    "options": {
+      "A": "36",
+      "B": "42",
+      "C": "48",
+      "D": "54"
+    },
+    "answer": "C",
+    "explanation": "Each number is doubled."
+  },
+  {
+    "id": "MA002",
+    "subject": "Mental Ability",
+    "topic": "Analogy",
+    "question": "4 : 16 :: 7 : ?",
+    "options": {
+      "A": "21",
+      "B": "28",
+      "C": "49",
+      "D": "56"
+    },
+    "answer": "C",
+    "explanation": "4²=16, so 7²=49."
+  },
+  {
+    "id": "EVS001",
+    "subject": "EVS",
+    "topic": "Plants",
+    "question": "Which part of a plant mainly makes food?",
+    "options": {
+      "A": "Root",
+      "B": "Leaf",
+      "C": "Flower",
+      "D": "Fruit"
+    },
+    "answer": "B",
+    "explanation": "Leaves make food by photosynthesis."
+  },
+  {
+    "id": "EVS002",
+    "subject": "EVS",
+    "topic": "Health",
+    "question": "Which habit helps prevent the spread of germs?",
+    "options": {
+      "A": "Leaving hands dirty",
+      "B": "Washing hands",
+      "C": "Sharing used tissues",
+      "D": "Skipping baths"
+    },
+    "answer": "B",
+    "explanation": "Handwashing removes many germs."
+  },
+  {
+    "id": "AR001",
+    "subject": "Arithmetic",
+    "topic": "Place Value",
+    "question": "What is the place value of 7 in 57,432?",
+    "options": {
+      "A": "7",
+      "B": "70",
+      "C": "700",
+      "D": "7,000"
+    },
+    "answer": "C",
+    "explanation": "7 is in the hundreds place."
+  },
+  {
+    "id": "AR002",
+    "subject": "Arithmetic",
+    "topic": "Addition",
+    "question": "3,456 + 2,789 = ?",
+    "options": {
+      "A": "6,145",
+      "B": "6,245",
+      "C": "6,345",
+      "D": "6,445"
+    },
+    "answer": "B",
+    "explanation": "The sum is 6,245."
+  },
+  {
+    "id": "LA001",
+    "subject": "Language",
+    "topic": "Vocabulary",
+    "question": "What is the closest meaning of 'happy'?",
+    "options": {
+      "A": "Sad",
+      "B": "Glad",
+      "C": "Angry",
+      "D": "Tired"
+    },
+    "answer": "B",
+    "explanation": "Glad means happy."
+  },
+  {
+    "id": "LA002",
+    "subject": "Language",
+    "topic": "Grammar",
+    "question": "Find the noun: 'The boy runs fast.'",
+    "options": {
+      "A": "runs",
+      "B": "fast",
+      "C": "boy",
+      "D": "the"
+    },
+    "answer": "C",
+    "explanation": "Boy names a person."
+  }
+]

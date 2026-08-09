@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Navodaya AI Coach V1</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f4f7fb;color:#18212f}
+header{background:#173b7a;color:white;padding:20px} main{max-width:760px;margin:auto;padding:16px}
+.card{background:white;border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 3px 14px #0001}
+button{border:0;border-radius:12px;padding:13px;margin:5px;background:#173b7a;color:white;font-weight:bold}
+.option{display:block;width:100%;text-align:left;background:#eef3fa;color:#18212f}
+.hidden{display:none}.small{color:#65748a}.stat{display:inline-block;background:#eef3fa;padding:10px;border-radius:10px;margin:4px}
+</style></head>
+<body>
+<header><h1>🎓 Navodaya AI Coach</h1><div>V1 Offline Practice</div></header>
+<main>
+<section id="home" class="card"><h2>Start Practice</h2>
+<button onclick="start('ALL',5)">⚡ Quick Practice — 5</button>
+<button onclick="start('ALL',8)">📚 Practice — 8</button>
+<h3>Subjects</h3><div id="subjects"></div></section>
+<section id="quiz" class="card hidden"><div id="progress" class="small"></div>
+<h2 id="q"></h2><div id="options"></div><button onclick="next()">Next →</button></section>
+<section id="result" class="card hidden"><h2>📊 Result</h2><div id="score"></div><div id="rec"></div>
+<button onclick="location.reload()">🏠 Home</button></section>
+</main>
+<script>
+let bank=[],current=[],i=0,score=0,chosen=null;
+fetch('questions.json').then(r=>r.json()).then(d=>{bank=d;drawSubjects()});
+function drawSubjects(){document.getElementById('subjects').innerHTML=[...new Set(bank.map(x=>x.subject))].map(s=>`<button onclick="start('${s}',5)">${s}</button>`).join('')}
+function start(s,n){let pool=s==='ALL'?bank:bank.filter(x=>x.subject===s);current=[...pool].sort(()=>Math.random()-.5).slice(0,n);i=0;score=0;chosen=null;
+home.classList.add('hidden');result.classList.add('hidden');quiz.classList.remove('hidden');show()}
+function show(){let x=current[i];chosen=null;progress.textContent=`Question ${i+1}/${current.length} • ${x.subject} • ${x.topic}`;q.textContent=x.question;
+options.innerHTML=Object.entries(x.options).map(([k,v])=>`<button class="option" onclick="pick('${k}',this)">${k}. ${v}</button>`).join('')}
+function pick(k,b){chosen=k;document.querySelectorAll('.option').forEach(x=>x.style.outline='');b.style.outline='3px solid #173b7a'}
+function next(){if(!chosen){alert('Choose an answer first.');return}let x=current[i];if(chosen===x.answer)score++;
+let a=JSON.parse(localStorage.getItem('navodaya_attempts')||'[]');a.push({id:x.id,topic:x.topic,correct:chosen===x.answer,date:new Date().toISOString()});localStorage.setItem('navodaya_attempts',JSON.stringify(a));
+i++;i<current.length?show():finish()}
+function finish(){quiz.classList.add('hidden');result.classList.remove('hidden');let p=Math.round(score/current.length*100);scoreEl=document.getElementById('score');scoreEl.innerHTML=`<span class="stat">${score}/${current.length} correct</span><span class="stat">${p}% accuracy</span>`;
+rec.innerHTML=`<h3>Coach recommendation</h3><p>${p>=80?'🟢 Strong — try a harder set.':p>=50?'🟡 Improving — practise your wrong topics.':'🔴 Needs practice — revise the topic and retry.'}</p>`}
+</script></body></html>
