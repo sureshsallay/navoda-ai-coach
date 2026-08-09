@@ -1,38 +1,7 @@
-<!doctype html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Navodaya AI Coach V1</title>
-<style>
-body{font-family:Arial,sans-serif;margin:0;background:#f4f7fb;color:#18212f}
-header{background:#173b7a;color:white;padding:20px} main{max-width:760px;margin:auto;padding:16px}
-.card{background:white;border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 3px 14px #0001}
-button{border:0;border-radius:12px;padding:13px;margin:5px;background:#173b7a;color:white;font-weight:bold}
-.option{display:block;width:100%;text-align:left;background:#eef3fa;color:#18212f}
-.hidden{display:none}.small{color:#65748a}.stat{display:inline-block;background:#eef3fa;padding:10px;border-radius:10px;margin:4px}
-</style></head>
-<body>
-<header><h1>🎓 Navodaya AI Coach</h1><div>V1 Offline Practice</div></header>
-<main>
-<section id="home" class="card"><h2>Start Practice</h2>
-<button onclick="start('ALL',5)">⚡ Quick Practice — 5</button>
-<button onclick="start('ALL',8)">📚 Practice — 8</button>
-<h3>Subjects</h3><div id="subjects"></div></section>
-<section id="quiz" class="card hidden"><div id="progress" class="small"></div>
-<h2 id="q"></h2><div id="options"></div><button onclick="next()">Next →</button></section>
-<section id="result" class="card hidden"><h2>📊 Result</h2><div id="score"></div><div id="rec"></div>
-<button onclick="location.reload()">🏠 Home</button></section>
-</main>
-<script>
-let bank=[],current=[],i=0,score=0,chosen=null;
-fetch('questions.json').then(r=>r.json()).then(d=>{bank=d;drawSubjects()});
-function drawSubjects(){document.getElementById('subjects').innerHTML=[...new Set(bank.map(x=>x.subject))].map(s=>`<button onclick="start('${s}',5)">${s}</button>`).join('')}
-function start(s,n){let pool=s==='ALL'?bank:bank.filter(x=>x.subject===s);current=[...pool].sort(()=>Math.random()-.5).slice(0,n);i=0;score=0;chosen=null;
-home.classList.add('hidden');result.classList.add('hidden');quiz.classList.remove('hidden');show()}
-function show(){let x=current[i];chosen=null;progress.textContent=`Question ${i+1}/${current.length} • ${x.subject} • ${x.topic}`;q.textContent=x.question;
-options.innerHTML=Object.entries(x.options).map(([k,v])=>`<button class="option" onclick="pick('${k}',this)">${k}. ${v}</button>`).join('')}
-function pick(k,b){chosen=k;document.querySelectorAll('.option').forEach(x=>x.style.outline='');b.style.outline='3px solid #173b7a'}
-function next(){if(!chosen){alert('Choose an answer first.');return}let x=current[i];if(chosen===x.answer)score++;
-let a=JSON.parse(localStorage.getItem('navodaya_attempts')||'[]');a.push({id:x.id,topic:x.topic,correct:chosen===x.answer,date:new Date().toISOString()});localStorage.setItem('navodaya_attempts',JSON.stringify(a));
-i++;i<current.length?show():finish()}
-function finish(){quiz.classList.add('hidden');result.classList.remove('hidden');let p=Math.round(score/current.length*100);scoreEl=document.getElementById('score');scoreEl.innerHTML=`<span class="stat">${score}/${current.length} correct</span><span class="stat">${p}% accuracy</span>`;
-rec.innerHTML=`<h3>Coach recommendation</h3><p>${p>=80?'🟢 Strong — try a harder set.':p>=50?'🟡 Improving — practise your wrong topics.':'🔴 Needs practice — revise the topic and retry.'}</p>`}
-</script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173f7a"><link rel="manifest" href="manifest.json"><title>Navodaya AI Coach 2027 V2</title><style>:root{--b:#173f7a;--bg:#f4f7fb;--ink:#152033;--line:#dce5ef;--ok:#16844a;--bad:#c93445}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,Segoe UI,Roboto,sans-serif}header{background:linear-gradient(135deg,#173f7a,#2b5eaa);color:#fff;padding:28px 20px}h1{margin:0;font-size:36px;line-height:1.05}header p{margin:8px 0 0;font-size:17px}.wrap{max-width:920px;margin:auto;padding:18px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;margin:14px 0;box-shadow:0 8px 25px #173f7a10}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.row{display:flex;gap:10px;flex-wrap:wrap}button,select{font:inherit;font-weight:700;border:0;border-radius:14px;padding:13px 16px;cursor:pointer}button.primary{background:var(--b);color:#fff}button.secondary{background:#eaf0f8;color:var(--b)}button.danger{background:#fff0f0;color:var(--bad)}button:disabled{opacity:.5}.pill{background:#edf3fb;padding:8px 11px;border-radius:999px;font-weight:700}.small{font-size:13px;color:#68778b}.hidden{display:none!important}.progress{height:9px;background:#e5ecf5;border-radius:20px;overflow:hidden}.progress div{height:100%;width:0;background:#2c66b5}.option{display:block;width:100%;text-align:left;background:#f8fafc;border:2px solid var(--line);margin:10px 0}.option.correct{background:#eaf8f0;border-color:var(--ok)}.option.wrong{background:#fff0f0;border-color:var(--bad)}.stat{background:#f5f8fc;padding:15px;border-radius:16px}.stat b{display:block;font-size:25px}footer{text-align:center;color:#6b7788;padding:28px 10px}</style></head><body><header><h1>🎓 Navodaya AI Coach</h1><p>2027 Preparation • V2 • Online + Offline</p></header><main class="wrap">
+<section id="home"><div class="card"><div class="row" style="justify-content:space-between;align-items:center"><h2>Start Practice</h2><span id="net" class="pill">Offline-ready</span></div><div class="grid"><button class="primary" onclick="quick()">⚡ Quick Practice<br><span class="small" style="color:#dbe8ff">10 questions</span></button><button class="primary" onclick="mock()">📝 Mock Test<br><span class="small" style="color:#dbe8ff">20 questions</span></button><button class="secondary" onclick="topics()">🎯 Topic Practice</button><button class="secondary" onclick="progressPage()">📊 My Progress</button></div></div><div class="card"><h2>Subjects</h2><div id="subjects" class="grid"></div></div><div class="card"><h2>🤖 Coach</h2><p id="coach">Take a test to get a recommendation.</p><div class="row"><button class="secondary" onclick="lang()">English / తెలుగు</button><button class="secondary" onclick="progressPage()">View Progress</button></div></div></section>
+<section id="quiz" class="hidden"><div class="row" style="justify-content:space-between"><button class="secondary" onclick="home()">← Home</button><span id="meta" class="pill"></span></div><div class="progress"><div id="bar"></div></div><div class="card"><div id="label" class="small"></div><h2 id="q"></h2><div id="opts"></div><button id="next" class="primary" onclick="next()" disabled>Next</button></div><div id="exp" class="card hidden"></div></section>
+<section id="result" class="hidden"><div class="card"><h2>📊 Result</h2><div id="stats" class="grid"></div><h3>🤖 Coach recommendation</h3><p id="rec"></p><h3>Topic analysis</h3><div id="analysis"></div><div class="row"><button class="primary" onclick="quick()">Try Again</button><button class="secondary" onclick="home()">Home</button></div></div></section>
+<section id="topics" class="hidden"><div class="card"><div class="row" style="justify-content:space-between"><button class="secondary" onclick="home()">← Home</button><h2>🎯 Topic Practice</h2></div><div id="topicList" class="grid"></div></div></section>
+<section id="progress" class="hidden"><div class="card"><div class="row" style="justify-content:space-between"><button class="secondary" onclick="home()">← Home</button><h2>📊 My Progress</h2></div><div id="pstats" class="grid"></div><h3>Weak topics</h3><div id="weak"></div><button class="danger" onclick="resetP()">Reset Progress</button></div></section>
+</main><footer>Navodaya AI Coach 2027 V2 • Your core practice works offline after first load.</footer><script src="app.js"></script></body></html>

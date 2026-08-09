@@ -1,114 +1,1702 @@
 [
   {
-    "id": "MA001",
+    "id": "ME001",
     "subject": "Mental Ability",
     "topic": "Series",
+    "difficulty": "M",
     "question": "3, 6, 12, 24, ?",
-    "options": {
-      "A": "36",
-      "B": "42",
-      "C": "48",
-      "D": "54"
-    },
-    "answer": "C",
-    "explanation": "Each number is doubled."
+    "options": [
+      "36",
+      "42",
+      "48",
+      "54"
+    ],
+    "answer": 2,
+    "explanation": "Each term is doubled.",
+    "te_question": "3, 6, 12, 24, ?",
+    "te_explanation": "ప్రతి పదాన్ని 2తో గుణిస్తున్నారు."
   },
   {
-    "id": "MA002",
+    "id": "ME002",
+    "subject": "Mental Ability",
+    "topic": "Series",
+    "difficulty": "M",
+    "question": "5, 9, 15, 23, 33, ?",
+    "options": [
+      "41",
+      "43",
+      "45",
+      "47"
+    ],
+    "answer": 2,
+    "explanation": "Differences are 4,6,8,10, then 12.",
+    "te_question": "5, 9, 15, 23, 33, ?",
+    "te_explanation": "తేడాలు 4,6,8,10; తర్వాత 12."
+  },
+  {
+    "id": "ME003",
     "subject": "Mental Ability",
     "topic": "Analogy",
+    "difficulty": "E",
     "question": "4 : 16 :: 7 : ?",
-    "options": {
-      "A": "21",
-      "B": "28",
-      "C": "49",
-      "D": "56"
-    },
-    "answer": "C",
-    "explanation": "4²=16, so 7²=49."
+    "options": [
+      "21",
+      "28",
+      "49",
+      "56"
+    ],
+    "answer": 2,
+    "explanation": "4²=16, so 7²=49.",
+    "te_question": "4 : 16 :: 7 : ?",
+    "te_explanation": "4²=16; అలాగే 7²=49."
   },
   {
-    "id": "EVS001",
+    "id": "ME004",
+    "subject": "Mental Ability",
+    "topic": "Classification",
+    "difficulty": "E",
+    "question": "Which is different?",
+    "options": [
+      "apple",
+      "mango",
+      "carrot",
+      "banana"
+    ],
+    "answer": 2,
+    "explanation": "Carrot is a vegetable; the others are fruits.",
+    "te_question": "Which is different?",
+    "te_explanation": "క్యారెట్ కూరగాయ; మిగతావి పండ్లు."
+  },
+  {
+    "id": "ME005",
+    "subject": "Mental Ability",
+    "topic": "Coding",
+    "difficulty": "M",
+    "question": "If CAT is DBU, DOG is:",
+    "options": [
+      "EPH",
+      "EOG",
+      "DPH",
+      "FPH"
+    ],
+    "answer": 0,
+    "explanation": "Each letter moves one step forward.",
+    "te_question": "If CAT is DBU, DOG is:",
+    "te_explanation": "ప్రతి అక్షరం ఒక స్థానం ముందుకు మారింది."
+  },
+  {
+    "id": "ME006",
+    "subject": "Mental Ability",
+    "topic": "Direction",
+    "difficulty": "E",
+    "question": "Facing North, turn right. You face:",
+    "options": [
+      "West",
+      "East",
+      "South",
+      "North"
+    ],
+    "answer": 1,
+    "explanation": "A right turn from North is East.",
+    "te_question": "Facing North, turn right. You face:",
+    "te_explanation": "ఉత్తరం నుంచి కుడివైపు తూర్పు."
+  },
+  {
+    "id": "ME007",
+    "subject": "Mental Ability",
+    "topic": "Ranking",
+    "difficulty": "M",
+    "question": "7th from left and 5th from right. Total?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "answer": 1,
+    "explanation": "7+5-1=11.",
+    "te_question": "7th from left and 5th from right. Total?",
+    "te_explanation": "7+5-1=11."
+  },
+  {
+    "id": "ME008",
+    "subject": "Mental Ability",
+    "topic": "Series",
+    "difficulty": "M",
+    "question": "A, C, F, J, O, ?",
+    "options": [
+      "T",
+      "U",
+      "V",
+      "W"
+    ],
+    "answer": 1,
+    "explanation": "Gaps increase: +2,+3,+4,+5,+6.",
+    "te_question": "A, C, F, J, O, ?",
+    "te_explanation": "దూరాలు +2,+3,+4,+5,+6."
+  },
+  {
+    "id": "ME009",
+    "subject": "Mental Ability",
+    "topic": "Analogy",
+    "difficulty": "E",
+    "question": "Bird : Nest :: Bee : ?",
+    "options": [
+      "Den",
+      "Hive",
+      "Stable",
+      "Burrow"
+    ],
+    "answer": 1,
+    "explanation": "Bees live in hives.",
+    "te_question": "Bird : Nest :: Bee : ?",
+    "te_explanation": "తేనెటీగలు గూళ్లలో నివసిస్తాయి."
+  },
+  {
+    "id": "ME010",
+    "subject": "Mental Ability",
+    "topic": "Classification",
+    "difficulty": "E",
+    "question": "Which is different?",
+    "options": [
+      "Triangle",
+      "Square",
+      "Circle",
+      "Rectangle"
+    ],
+    "answer": 2,
+    "explanation": "Circle has no straight sides.",
+    "te_question": "Which is different?",
+    "te_explanation": "వృత్తానికి సూటి భుజాలు లేవు."
+  },
+  {
+    "id": "ME011",
+    "subject": "Mental Ability",
+    "topic": "Clock",
+    "difficulty": "M",
+    "question": "Minute hand movement in 10 minutes:",
+    "options": [
+      "30°",
+      "45°",
+      "60°",
+      "90°"
+    ],
+    "answer": 2,
+    "explanation": "It moves 6° per minute.",
+    "te_question": "Minute hand movement in 10 minutes:",
+    "te_explanation": "నిమిషానికి 6°; 10 నిమిషాలకు 60°."
+  },
+  {
+    "id": "ME012",
+    "subject": "Mental Ability",
+    "topic": "Series",
+    "difficulty": "E",
+    "question": "1, 4, 9, 16, ?",
+    "options": [
+      "20",
+      "24",
+      "25",
+      "36"
+    ],
+    "answer": 2,
+    "explanation": "These are 1²,2²,3²,4²,5².",
+    "te_question": "1, 4, 9, 16, ?",
+    "te_explanation": "ఇవి వరుసగా 1²,2²,3²,4²,5²."
+  },
+  {
+    "id": "ME013",
+    "subject": "Mental Ability",
+    "topic": "Order",
+    "difficulty": "E",
+    "question": "Youngest to oldest:",
+    "options": [
+      "baby-child-teenager-adult",
+      "child-baby-adult-teenager",
+      "baby-teenager-child-adult",
+      "teenager-baby-child-adult"
+    ],
+    "answer": 0,
+    "explanation": "That is the normal age order.",
+    "te_question": "Youngest to oldest:",
+    "te_explanation": "అది సరైన వయస్సు క్రమం."
+  },
+  {
+    "id": "ME014",
+    "subject": "Mental Ability",
+    "topic": "Odd one out",
+    "difficulty": "M",
+    "question": "Which is different?",
+    "options": [
+      "8",
+      "27",
+      "64",
+      "100"
+    ],
+    "answer": 3,
+    "explanation": "8,27,64 are cubes; 100 is not.",
+    "te_question": "Which is different?",
+    "te_explanation": "8,27,64 ఘన సంఖ్యలు; 100 కాదు."
+  },
+  {
+    "id": "ME015",
+    "subject": "Mental Ability",
+    "topic": "Series",
+    "difficulty": "E",
+    "question": "7, 14, 21, 28, ?",
+    "options": [
+      "32",
+      "35",
+      "36",
+      "42"
+    ],
+    "answer": 1,
+    "explanation": "Add 7 each time.",
+    "te_question": "7, 14, 21, 28, ?",
+    "te_explanation": "ప్రతి సారి 7 కలపాలి."
+  },
+  {
+    "id": "ME016",
+    "subject": "Mental Ability",
+    "topic": "Days",
+    "difficulty": "M",
+    "question": "If today is Monday, after 10 days it is:",
+    "options": [
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "answer": 1,
+    "explanation": "10=7+3, so Monday+3 is Thursday.",
+    "te_question": "If today is Monday, after 10 days it is:",
+    "te_explanation": "10=7+3; సోమవారం తర్వాత గురువారం."
+  },
+  {
+    "id": "ME017",
+    "subject": "Mental Ability",
+    "topic": "Coding",
+    "difficulty": "M",
+    "question": "If SUN is TVO, MOON is:",
+    "options": [
+      "NPPO",
+      "NPPN",
+      "MPPO",
+      "NOOP"
+    ],
+    "answer": 0,
+    "explanation": "Each letter moves one step forward.",
+    "te_question": "If SUN is TVO, MOON is:",
+    "te_explanation": "ప్రతి అక్షరం ఒక స్థానం ముందుకు."
+  },
+  {
+    "id": "ME018",
+    "subject": "Mental Ability",
+    "topic": "Direction",
+    "difficulty": "E",
+    "question": "5 m East then 5 m West. Position?",
+    "options": [
+      "5 m East",
+      "5 m West",
+      "Same point",
+      "10 m East"
+    ],
+    "answer": 2,
+    "explanation": "The movements cancel.",
+    "te_question": "5 m East then 5 m West. Position?",
+    "te_explanation": "రెండు కదలికలు రద్దవుతాయి."
+  },
+  {
+    "id": "ME019",
+    "subject": "Mental Ability",
+    "topic": "Analogy",
+    "difficulty": "E",
+    "question": "Pen : Write :: Knife : ?",
+    "options": [
+      "Cut",
+      "Read",
+      "Drink",
+      "Run"
+    ],
+    "answer": 0,
+    "explanation": "A knife is used to cut.",
+    "te_question": "Pen : Write :: Knife : ?",
+    "te_explanation": "కత్తిని కోయడానికి ఉపయోగిస్తారు."
+  },
+  {
+    "id": "ME020",
+    "subject": "Mental Ability",
+    "topic": "Classification",
+    "difficulty": "E",
+    "question": "Which is different?",
+    "options": [
+      "Cow",
+      "Goat",
+      "Tiger",
+      "Buffalo"
+    ],
+    "answer": 2,
+    "explanation": "Tiger is carnivorous; the others are herbivorous.",
+    "te_question": "Which is different?",
+    "te_explanation": "పులి మాంసాహారి; మిగతావి శాకాహారులు."
+  },
+  {
+    "id": "ME021",
+    "subject": "Mental Ability",
+    "topic": "Ranking",
+    "difficulty": "M",
+    "question": "9th from top and 12th from bottom. Total?",
+    "options": [
+      "19",
+      "20",
+      "21",
+      "22"
+    ],
+    "answer": 1,
+    "explanation": "9+12-1=20.",
+    "te_question": "9th from top and 12th from bottom. Total?",
+    "te_explanation": "9+12-1=20."
+  },
+  {
+    "id": "ME022",
+    "subject": "Mental Ability",
+    "topic": "Comparison",
+    "difficulty": "M",
+    "question": "Raju is taller than Sita; Sita taller than Mina. Shortest?",
+    "options": [
+      "Raju",
+      "Sita",
+      "Mina",
+      "Cannot say"
+    ],
+    "answer": 2,
+    "explanation": "Raju>Sita>Mina.",
+    "te_question": "Raju is taller than Sita; Sita taller than Mina. Shortest?",
+    "te_explanation": "రాజు>సీత>మీనా."
+  },
+  {
+    "id": "ME023",
+    "subject": "Mental Ability",
+    "topic": "Pattern",
+    "difficulty": "M",
+    "question": "2, 5, 10, 17, 26, ?",
+    "options": [
+      "35",
+      "36",
+      "37",
+      "38"
+    ],
+    "answer": 2,
+    "explanation": "Add 3,5,7,9, then 11.",
+    "te_question": "2, 5, 10, 17, 26, ?",
+    "te_explanation": "+3,+5,+7,+9; తర్వాత +11."
+  },
+  {
+    "id": "ME024",
+    "subject": "Mental Ability",
+    "topic": "Analogy",
+    "difficulty": "E",
+    "question": "Wheel : Bicycle :: Page : ?",
+    "options": [
+      "Book",
+      "Road",
+      "Pen",
+      "Chair"
+    ],
+    "answer": 0,
+    "explanation": "A page is part of a book.",
+    "te_question": "Wheel : Bicycle :: Page : ?",
+    "te_explanation": "పేజీ పుస్తకంలో ఒక భాగం."
+  },
+  {
+    "id": "ME025",
+    "subject": "Mental Ability",
+    "topic": "Logical order",
+    "difficulty": "M",
+    "question": "Correct order: seed, plant, flower, fruit.",
+    "options": [
+      "seed-plant-flower-fruit",
+      "plant-seed-fruit-flower",
+      "flower-seed-plant-fruit",
+      "fruit-flower-plant-seed"
+    ],
+    "answer": 0,
+    "explanation": "That is the natural growth sequence.",
+    "te_question": "Correct order: seed, plant, flower, fruit.",
+    "te_explanation": "ఇది మొక్క పెరుగుదల సహజ క్రమం."
+  },
+  {
+    "id": "EV001",
     "subject": "EVS",
     "topic": "Plants",
-    "question": "Which part of a plant mainly makes food?",
-    "options": {
-      "A": "Root",
-      "B": "Leaf",
-      "C": "Flower",
-      "D": "Fruit"
-    },
-    "answer": "B",
-    "explanation": "Leaves make food by photosynthesis."
+    "difficulty": "E",
+    "question": "Main food-making part:",
+    "options": [
+      "Root",
+      "Leaf",
+      "Flower",
+      "Fruit"
+    ],
+    "answer": 1,
+    "explanation": "Leaves make food.",
+    "te_question": "Main food-making part:",
+    "te_explanation": "ఆకులు ఆహారం తయారు చేస్తాయి."
   },
   {
-    "id": "EVS002",
+    "id": "EV002",
+    "subject": "EVS",
+    "topic": "Plants",
+    "difficulty": "E",
+    "question": "Main function of roots:",
+    "options": [
+      "Make flowers",
+      "Absorb water",
+      "Make seeds",
+      "Produce sound"
+    ],
+    "answer": 1,
+    "explanation": "Roots absorb water and minerals.",
+    "te_question": "Main function of roots:",
+    "te_explanation": "వేర్లు నీరు, ఖనిజాలను పీల్చుకుంటాయి."
+  },
+  {
+    "id": "EV003",
+    "subject": "EVS",
+    "topic": "Animals",
+    "difficulty": "E",
+    "question": "Fish mainly live in:",
+    "options": [
+      "Desert",
+      "Water",
+      "Tree top",
+      "Burrow"
+    ],
+    "answer": 1,
+    "explanation": "Fish are adapted to water.",
+    "te_question": "Fish mainly live in:",
+    "te_explanation": "చేపలు నీటిలో జీవించడానికి అనుకూలం."
+  },
+  {
+    "id": "EV004",
+    "subject": "EVS",
+    "topic": "Food",
+    "difficulty": "E",
+    "question": "Nutrient important for growth and repair:",
+    "options": [
+      "Protein",
+      "Salt",
+      "Roughage",
+      "Water"
+    ],
+    "answer": 0,
+    "explanation": "Protein supports growth and repair.",
+    "te_question": "Nutrient important for growth and repair:",
+    "te_explanation": "ప్రోటీన్ పెరుగుదల, మరమ్మతుకు సహాయపడుతుంది."
+  },
+  {
+    "id": "EV005",
     "subject": "EVS",
     "topic": "Health",
-    "question": "Which habit helps prevent the spread of germs?",
-    "options": {
-      "A": "Leaving hands dirty",
-      "B": "Washing hands",
-      "C": "Sharing used tissues",
-      "D": "Skipping baths"
-    },
-    "answer": "B",
-    "explanation": "Handwashing removes many germs."
+    "difficulty": "E",
+    "question": "Best handwashing times include:",
+    "options": [
+      "Before eating and after toilet",
+      "Only Sunday",
+      "Only at night",
+      "Never"
+    ],
+    "answer": 0,
+    "explanation": "Handwashing helps prevent germs.",
+    "te_question": "Best handwashing times include:",
+    "te_explanation": "చేతులు కడుక్కోవడం సూక్ష్మజీవులను తగ్గిస్తుంది."
+  },
+  {
+    "id": "EV006",
+    "subject": "EVS",
+    "topic": "Water",
+    "difficulty": "E",
+    "question": "Natural water source:",
+    "options": [
+      "River",
+      "Tap",
+      "Bottle",
+      "Tank"
+    ],
+    "answer": 0,
+    "explanation": "A river is a natural source.",
+    "te_question": "Natural water source:",
+    "te_explanation": "నది సహజ నీటి వనరు."
+  },
+  {
+    "id": "EV007",
+    "subject": "EVS",
+    "topic": "Environment",
+    "difficulty": "M",
+    "question": "Helps reduce air pollution:",
+    "options": [
+      "Burn plastic",
+      "Plant trees",
+      "Make more smoke",
+      "Burn waste"
+    ],
+    "answer": 1,
+    "explanation": "Trees help improve air quality.",
+    "te_question": "Helps reduce air pollution:",
+    "te_explanation": "చెట్లు గాలి నాణ్యతను మెరుగుపరుస్తాయి."
+  },
+  {
+    "id": "EV008",
+    "subject": "EVS",
+    "topic": "Animals",
+    "difficulty": "E",
+    "question": "Herbivorous animal:",
+    "options": [
+      "Cow",
+      "Lion",
+      "Tiger",
+      "Eagle"
+    ],
+    "answer": 0,
+    "explanation": "Cow mainly eats plants.",
+    "te_question": "Herbivorous animal:",
+    "te_explanation": "ఆవు ప్రధానంగా మొక్కల ఆహారం తింటుంది."
+  },
+  {
+    "id": "EV009",
+    "subject": "EVS",
+    "topic": "Plants",
+    "difficulty": "M",
+    "question": "Wind can disperse seeds with:",
+    "options": [
+      "Wings/hairs",
+      "Heavy stones",
+      "Roots",
+      "Metal"
+    ],
+    "answer": 0,
+    "explanation": "Light winged or hairy seeds travel by wind.",
+    "te_question": "Wind can disperse seeds with:",
+    "te_explanation": "రెక్కలు/రోమాలు ఉన్న తేలిక విత్తనాలు గాలితో వెళ్తాయి."
+  },
+  {
+    "id": "EV010",
+    "subject": "EVS",
+    "topic": "Food",
+    "difficulty": "M",
+    "question": "Balanced diet contains:",
+    "options": [
+      "Only carbs",
+      "Only protein",
+      "Different nutrients in proper amounts",
+      "Only fruit"
+    ],
+    "answer": 2,
+    "explanation": "It supplies varied nutrients in suitable amounts.",
+    "te_question": "Balanced diet contains:",
+    "te_explanation": "వివిధ పోషకాలు సరైన మోతాదులో ఉండాలి."
+  },
+  {
+    "id": "EV011",
+    "subject": "EVS",
+    "topic": "Water",
+    "difficulty": "E",
+    "question": "Which saves water?",
+    "options": [
+      "Leave tap open",
+      "Fix leaks",
+      "Wash roads with hose",
+      "Play with running water"
+    ],
+    "answer": 1,
+    "explanation": "Fixing leaks prevents waste.",
+    "te_question": "Which saves water?",
+    "te_explanation": "లీకులు బాగుచేయడం నీటి వృథాను ఆపుతుంది."
+  },
+  {
+    "id": "EV012",
+    "subject": "EVS",
+    "topic": "Human body",
+    "difficulty": "E",
+    "question": "Organ used for breathing:",
+    "options": [
+      "Lungs",
+      "Stomach",
+      "Kidney",
+      "Skin"
+    ],
+    "answer": 0,
+    "explanation": "Lungs exchange gases.",
+    "te_question": "Organ used for breathing:",
+    "te_explanation": "ఊపిరితిత్తులు వాయువుల మార్పిడి చేస్తాయి."
+  },
+  {
+    "id": "EV013",
+    "subject": "EVS",
+    "topic": "Human body",
+    "difficulty": "M",
+    "question": "Digestion begins in the:",
+    "options": [
+      "Mouth",
+      "Ear",
+      "Hand",
+      "Leg"
+    ],
+    "answer": 0,
+    "explanation": "Chewing and saliva begin digestion.",
+    "te_question": "Digestion begins in the:",
+    "te_explanation": "నమలడం, లాలాజలంతో నోటిలో జీర్ణక్రియ ప్రారంభం."
+  },
+  {
+    "id": "EV014",
+    "subject": "EVS",
+    "topic": "Materials",
+    "difficulty": "M",
+    "question": "Melting ice is a:",
+    "options": [
+      "Chemical change",
+      "Change of state",
+      "Growth",
+      "Seed dispersal"
+    ],
+    "answer": 1,
+    "explanation": "Solid water becomes liquid water.",
+    "te_question": "Melting ice is a:",
+    "te_explanation": "ఘన నీరు ద్రవ నీరుగా మారుతుంది."
+  },
+  {
+    "id": "EV015",
+    "subject": "EVS",
+    "topic": "Weather",
+    "difficulty": "E",
+    "question": "Instrument for temperature:",
+    "options": [
+      "Thermometer",
+      "Compass",
+      "Ruler",
+      "Balance"
+    ],
+    "answer": 0,
+    "explanation": "A thermometer measures temperature.",
+    "te_question": "Instrument for temperature:",
+    "te_explanation": "థర్మామీటర్ ఉష్ణోగ్రతను కొలుస్తుంది."
+  },
+  {
+    "id": "EV016",
+    "subject": "EVS",
+    "topic": "Energy",
+    "difficulty": "M",
+    "question": "Renewable source:",
+    "options": [
+      "Sunlight",
+      "Coal",
+      "Petrol",
+      "Diesel"
+    ],
+    "answer": 0,
+    "explanation": "Sunlight is naturally replenished.",
+    "te_question": "Renewable source:",
+    "te_explanation": "సూర్యకాంతి పునరుత్పాదక శక్తి వనరు."
+  },
+  {
+    "id": "EV017",
+    "subject": "EVS",
+    "topic": "Waste",
+    "difficulty": "E",
+    "question": "Suitable for compost:",
+    "options": [
+      "Fruit peels",
+      "Plastic",
+      "Glass",
+      "Metal"
+    ],
+    "answer": 0,
+    "explanation": "Organic peels decompose.",
+    "te_question": "Suitable for compost:",
+    "te_explanation": "సేంద్రీయ తొక్కలు కుళ్లుతాయి."
+  },
+  {
+    "id": "EV018",
+    "subject": "EVS",
+    "topic": "Animals",
+    "difficulty": "M",
+    "question": "Camel's broad feet help it:",
+    "options": [
+      "Swim",
+      "Walk on sand",
+      "Climb trees",
+      "Fly"
+    ],
+    "answer": 1,
+    "explanation": "Broad feet spread weight on sand.",
+    "te_question": "Camel's broad feet help it:",
+    "te_explanation": "విస్తారమైన పాదాలు ఇసుకపై బరువును పంచుతాయి."
+  },
+  {
+    "id": "EV019",
+    "subject": "EVS",
+    "topic": "Plants",
+    "difficulty": "E",
+    "question": "Seeds generally need:",
+    "options": [
+      "Water, air, suitable warmth",
+      "Only darkness",
+      "Only salt",
+      "Only stones"
+    ],
+    "answer": 0,
+    "explanation": "These conditions support germination.",
+    "te_question": "Seeds generally need:",
+    "te_explanation": "నీరు, గాలి, తగిన వెచ్చదనం మొలకకు సహాయపడతాయి."
+  },
+  {
+    "id": "EV020",
+    "subject": "EVS",
+    "topic": "Food",
+    "difficulty": "M",
+    "question": "Food preservation method:",
+    "options": [
+      "Drying",
+      "Painting",
+      "Shouting",
+      "Breaking"
+    ],
+    "answer": 0,
+    "explanation": "Drying reduces moisture.",
+    "te_question": "Food preservation method:",
+    "te_explanation": "ఎండబెట్టడం తేమను తగ్గిస్తుంది."
+  },
+  {
+    "id": "EV021",
+    "subject": "EVS",
+    "topic": "Health",
+    "difficulty": "E",
+    "question": "Regular exercise helps:",
+    "options": [
+      "Fitness",
+      "Illness",
+      "Stop breathing",
+      "Damage muscles"
+    ],
+    "answer": 0,
+    "explanation": "Exercise supports health and fitness.",
+    "te_question": "Regular exercise helps:",
+    "te_explanation": "వ్యాయామం ఆరోగ్యం, దృఢత్వానికి సహాయపడుతుంది."
+  },
+  {
+    "id": "EV022",
+    "subject": "EVS",
+    "topic": "Water",
+    "difficulty": "M",
+    "question": "Water vapour becoming droplets:",
+    "options": [
+      "Condensation",
+      "Melting",
+      "Freezing",
+      "Burning"
+    ],
+    "answer": 0,
+    "explanation": "Cooling vapour causes condensation.",
+    "te_question": "Water vapour becoming droplets:",
+    "te_explanation": "నీటి ఆవిరి చల్లబడి బిందువులుగా మారడం ఘనీభవనం."
+  },
+  {
+    "id": "EV023",
+    "subject": "EVS",
+    "topic": "Plants",
+    "difficulty": "M",
+    "question": "Plants lose water vapour mainly through:",
+    "options": [
+      "Leaves",
+      "Rocks",
+      "Seeds",
+      "Soil"
+    ],
+    "answer": 0,
+    "explanation": "Water vapour leaves through tiny leaf openings.",
+    "te_question": "Plants lose water vapour mainly through:",
+    "te_explanation": "ఆకుల చిన్న రంధ్రాల ద్వారా నీటి ఆవిరి బయటకు వెళ్తుంది."
+  },
+  {
+    "id": "EV024",
+    "subject": "EVS",
+    "topic": "Environment",
+    "difficulty": "M",
+    "question": "Green plants are usually:",
+    "options": [
+      "Producers",
+      "Consumers",
+      "Decomposers",
+      "Predators"
+    ],
+    "answer": 0,
+    "explanation": "They make their own food.",
+    "te_question": "Green plants are usually:",
+    "te_explanation": "తమ ఆహారాన్ని తామే తయారు చేసుకుంటాయి."
+  },
+  {
+    "id": "EV025",
+    "subject": "EVS",
+    "topic": "Animals",
+    "difficulty": "E",
+    "question": "Honey comes from:",
+    "options": [
+      "Honeybees",
+      "Cows",
+      "Goats",
+      "Fish"
+    ],
+    "answer": 0,
+    "explanation": "Honeybees produce honey.",
+    "te_question": "Honey comes from:",
+    "te_explanation": "తేనెటీగలు తేనె తయారు చేస్తాయి."
   },
   {
     "id": "AR001",
     "subject": "Arithmetic",
-    "topic": "Place Value",
-    "question": "What is the place value of 7 in 57,432?",
-    "options": {
-      "A": "7",
-      "B": "70",
-      "C": "700",
-      "D": "7,000"
-    },
-    "answer": "C",
-    "explanation": "7 is in the hundreds place."
+    "topic": "Number System",
+    "difficulty": "E",
+    "question": "Place value of 7 in 57,432:",
+    "options": [
+      "7",
+      "70",
+      "700",
+      "7,000"
+    ],
+    "answer": 2,
+    "explanation": "7 is in the hundreds place.",
+    "te_question": "Place value of 7 in 57,432:",
+    "te_explanation": "7 వందల స్థానంలో ఉంది."
   },
   {
     "id": "AR002",
     "subject": "Arithmetic",
-    "topic": "Addition",
-    "question": "3,456 + 2,789 = ?",
-    "options": {
-      "A": "6,145",
-      "B": "6,245",
-      "C": "6,345",
-      "D": "6,445"
-    },
-    "answer": "B",
-    "explanation": "The sum is 6,245."
+    "topic": "Operations",
+    "difficulty": "E",
+    "question": "3,456 + 2,789 =",
+    "options": [
+      "6,145",
+      "6,245",
+      "6,345",
+      "6,445"
+    ],
+    "answer": 1,
+    "explanation": "The sum is 6,245.",
+    "te_question": "3,456 + 2,789 =",
+    "te_explanation": "మొత్తం 6,245."
+  },
+  {
+    "id": "AR003",
+    "subject": "Arithmetic",
+    "topic": "Operations",
+    "difficulty": "E",
+    "question": "8,000 - 3,475 =",
+    "options": [
+      "4,425",
+      "4,525",
+      "4,625",
+      "4,725"
+    ],
+    "answer": 1,
+    "explanation": "8,000-3,475=4,525.",
+    "te_question": "8,000 - 3,475 =",
+    "te_explanation": "8,000-3,475=4,525."
+  },
+  {
+    "id": "AR004",
+    "subject": "Arithmetic",
+    "topic": "Multiplication",
+    "difficulty": "E",
+    "question": "125 × 8 =",
+    "options": [
+      "900",
+      "1,000",
+      "1,125",
+      "1,250"
+    ],
+    "answer": 1,
+    "explanation": "125×8=1,000.",
+    "te_question": "125 × 8 =",
+    "te_explanation": "125×8=1,000."
+  },
+  {
+    "id": "AR005",
+    "subject": "Arithmetic",
+    "topic": "Division",
+    "difficulty": "E",
+    "question": "936 ÷ 9 =",
+    "options": [
+      "94",
+      "104",
+      "114",
+      "124"
+    ],
+    "answer": 1,
+    "explanation": "9×104=936.",
+    "te_question": "936 ÷ 9 =",
+    "te_explanation": "9×104=936."
+  },
+  {
+    "id": "AR006",
+    "subject": "Arithmetic",
+    "topic": "Factors",
+    "difficulty": "M",
+    "question": "A factor of 36 is:",
+    "options": [
+      "5",
+      "7",
+      "9",
+      "11"
+    ],
+    "answer": 2,
+    "explanation": "36 is divisible by 9.",
+    "te_question": "A factor of 36 is:",
+    "te_explanation": "36 ను 9తో భాగిస్తే శేషం 0."
+  },
+  {
+    "id": "AR007",
+    "subject": "Arithmetic",
+    "topic": "Multiples",
+    "difficulty": "M",
+    "question": "LCM of 4 and 6:",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "24"
+    ],
+    "answer": 2,
+    "explanation": "The least common multiple is 12.",
+    "te_question": "LCM of 4 and 6:",
+    "te_explanation": "కనిష్ఠ సామాన్య గుణిజం 12."
+  },
+  {
+    "id": "AR008",
+    "subject": "Arithmetic",
+    "topic": "Fractions",
+    "difficulty": "M",
+    "question": "2/7 + 3/7 =",
+    "options": [
+      "4/7",
+      "5/7",
+      "5/14",
+      "6/7"
+    ],
+    "answer": 1,
+    "explanation": "Add numerators when denominators are equal.",
+    "te_question": "2/7 + 3/7 =",
+    "te_explanation": "హారాలు సమానం కాబట్టి లవాలను కలపాలి."
+  },
+  {
+    "id": "AR009",
+    "subject": "Arithmetic",
+    "topic": "Fractions",
+    "difficulty": "M",
+    "question": "Which is greatest?",
+    "options": [
+      "3/8",
+      "5/8",
+      "2/8",
+      "1/8"
+    ],
+    "answer": 1,
+    "explanation": "With equal denominators, the larger numerator is greater.",
+    "te_question": "Which is greatest?",
+    "te_explanation": "హారం ఒకటే అయితే పెద్ద లవం ఉన్నది పెద్దది."
+  },
+  {
+    "id": "AR010",
+    "subject": "Arithmetic",
+    "topic": "Decimals",
+    "difficulty": "M",
+    "question": "3.5 as a fraction:",
+    "options": [
+      "3/5",
+      "35/10",
+      "7/2",
+      "Both B and C"
+    ],
+    "answer": 3,
+    "explanation": "3.5=35/10=7/2.",
+    "te_question": "3.5 as a fraction:",
+    "te_explanation": "3.5=35/10=7/2."
+  },
+  {
+    "id": "AR011",
+    "subject": "Arithmetic",
+    "topic": "Percentage",
+    "difficulty": "M",
+    "question": "25% of 200 =",
+    "options": [
+      "25",
+      "40",
+      "50",
+      "75"
+    ],
+    "answer": 2,
+    "explanation": "25% is one quarter; 200/4=50.",
+    "te_question": "25% of 200 =",
+    "te_explanation": "25% అంటే నాలుగో వంతు; 200/4=50."
+  },
+  {
+    "id": "AR012",
+    "subject": "Arithmetic",
+    "topic": "Measurement",
+    "difficulty": "E",
+    "question": "1 metre =",
+    "options": [
+      "10 cm",
+      "50 cm",
+      "100 cm",
+      "1,000 cm"
+    ],
+    "answer": 2,
+    "explanation": "1 m=100 cm.",
+    "te_question": "1 metre =",
+    "te_explanation": "1 మీటర్=100 సెం.మీ."
+  },
+  {
+    "id": "AR013",
+    "subject": "Arithmetic",
+    "topic": "Measurement",
+    "difficulty": "E",
+    "question": "1 kilogram =",
+    "options": [
+      "10 g",
+      "100 g",
+      "500 g",
+      "1,000 g"
+    ],
+    "answer": 3,
+    "explanation": "1 kg=1,000 g.",
+    "te_question": "1 kilogram =",
+    "te_explanation": "1 కిలోగ్రాము=1,000 గ్రాములు."
+  },
+  {
+    "id": "AR014",
+    "subject": "Arithmetic",
+    "topic": "Geometry",
+    "difficulty": "M",
+    "question": "Rectangle 8 cm by 4 cm. Perimeter:",
+    "options": [
+      "12 cm",
+      "20 cm",
+      "24 cm",
+      "32 cm"
+    ],
+    "answer": 2,
+    "explanation": "2×(8+4)=24 cm.",
+    "te_question": "Rectangle 8 cm by 4 cm. Perimeter:",
+    "te_explanation": "2×(8+4)=24 సెం.మీ."
+  },
+  {
+    "id": "AR015",
+    "subject": "Arithmetic",
+    "topic": "Geometry",
+    "difficulty": "M",
+    "question": "Rectangle 7 cm by 5 cm. Area:",
+    "options": [
+      "12 cm²",
+      "24 cm²",
+      "35 cm²",
+      "40 cm²"
+    ],
+    "answer": 2,
+    "explanation": "7×5=35 cm².",
+    "te_question": "Rectangle 7 cm by 5 cm. Area:",
+    "te_explanation": "7×5=35 చ.సెం.మీ."
+  },
+  {
+    "id": "AR016",
+    "subject": "Arithmetic",
+    "topic": "Data",
+    "difficulty": "M",
+    "question": "Average of 4, 6, 8:",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": 1,
+    "explanation": "18÷3=6.",
+    "te_question": "Average of 4, 6, 8:",
+    "te_explanation": "18÷3=6."
+  },
+  {
+    "id": "AR017",
+    "subject": "Arithmetic",
+    "topic": "Money",
+    "difficulty": "E",
+    "question": "A book costs ₹75. Four cost:",
+    "options": [
+      "₹250",
+      "₹275",
+      "₹300",
+      "₹325"
+    ],
+    "answer": 2,
+    "explanation": "75×4=300.",
+    "te_question": "A book costs ₹75. Four cost:",
+    "te_explanation": "75×4=₹300."
+  },
+  {
+    "id": "AR018",
+    "subject": "Arithmetic",
+    "topic": "Time",
+    "difficulty": "M",
+    "question": "9:00 to 9:45 is:",
+    "options": [
+      "30 min",
+      "40 min",
+      "45 min",
+      "50 min"
+    ],
+    "answer": 2,
+    "explanation": "The elapsed time is 45 minutes.",
+    "te_question": "9:00 to 9:45 is:",
+    "te_explanation": "గడిచిన సమయం 45 నిమిషాలు."
+  },
+  {
+    "id": "AR019",
+    "subject": "Arithmetic",
+    "topic": "Fractions",
+    "difficulty": "M",
+    "question": "2 1/2 equals:",
+    "options": [
+      "3/2",
+      "4/2",
+      "5/2",
+      "6/2"
+    ],
+    "answer": 2,
+    "explanation": "2=4/2, plus 1/2 gives 5/2.",
+    "te_question": "2 1/2 equals:",
+    "te_explanation": "2=4/2; 1/2 కలిపితే 5/2."
+  },
+  {
+    "id": "AR020",
+    "subject": "Arithmetic",
+    "topic": "Decimals",
+    "difficulty": "M",
+    "question": "2.5 + 1.75 =",
+    "options": [
+      "3.25",
+      "4.25",
+      "4.75",
+      "5.25"
+    ],
+    "answer": 1,
+    "explanation": "Align decimal places and add.",
+    "te_question": "2.5 + 1.75 =",
+    "te_explanation": "దశాంశ స్థానాలను సరిచేసి కలపాలి."
+  },
+  {
+    "id": "AR021",
+    "subject": "Arithmetic",
+    "topic": "Number System",
+    "difficulty": "M",
+    "question": "4,678 rounded to nearest hundred:",
+    "options": [
+      "4,600",
+      "4,700",
+      "4,800",
+      "5,000"
+    ],
+    "answer": 1,
+    "explanation": "Tens digit 7 rounds the hundreds up.",
+    "te_question": "4,678 rounded to nearest hundred:",
+    "te_explanation": "పదుల అంకె 7 కాబట్టి వందల స్థానాన్ని పైకి రౌండ్ చేయాలి."
+  },
+  {
+    "id": "AR022",
+    "subject": "Arithmetic",
+    "topic": "Factors",
+    "difficulty": "E",
+    "question": "Which is prime?",
+    "options": [
+      "21",
+      "27",
+      "29",
+      "33"
+    ],
+    "answer": 2,
+    "explanation": "29 has only factors 1 and 29.",
+    "te_question": "Which is prime?",
+    "te_explanation": "29కి 1,29 మాత్రమే కారకాలు."
+  },
+  {
+    "id": "AR023",
+    "subject": "Arithmetic",
+    "topic": "Ratio",
+    "difficulty": "M",
+    "question": "2:3 means:",
+    "options": [
+      "2 parts to 3 parts",
+      "3 parts to 2 parts",
+      "2+3",
+      "2-3"
+    ],
+    "answer": 0,
+    "explanation": "It compares two quantities in order.",
+    "te_question": "2:3 means:",
+    "te_explanation": "రెండు పరిమాణాలను క్రమంలో పోల్చే విధానం."
+  },
+  {
+    "id": "AR024",
+    "subject": "Arithmetic",
+    "topic": "Data",
+    "difficulty": "M",
+    "question": "Monday sales 10, Tuesday 15. Difference:",
+    "options": [
+      "3",
+      "5",
+      "10",
+      "25"
+    ],
+    "answer": 1,
+    "explanation": "15-10=5.",
+    "te_question": "Monday sales 10, Tuesday 15. Difference:",
+    "te_explanation": "15-10=5."
+  },
+  {
+    "id": "AR025",
+    "subject": "Arithmetic",
+    "topic": "Geometry",
+    "difficulty": "M",
+    "question": "A triangle has how many sides?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": 1,
+    "explanation": "A triangle has three sides.",
+    "te_question": "A triangle has how many sides?",
+    "te_explanation": "త్రిభుజానికి మూడు భుజాలు ఉంటాయి."
   },
   {
     "id": "LA001",
     "subject": "Language",
-    "topic": "Vocabulary",
-    "question": "What is the closest meaning of 'happy'?",
-    "options": {
-      "A": "Sad",
-      "B": "Glad",
-      "C": "Angry",
-      "D": "Tired"
-    },
-    "answer": "B",
-    "explanation": "Glad means happy."
+    "topic": "Comprehension",
+    "difficulty": "E",
+    "question": "Ravi waters plants every morning. Why?",
+    "options": [
+      "To help them grow",
+      "To wash the road",
+      "To play",
+      "To paint them"
+    ],
+    "answer": 0,
+    "explanation": "Water helps plants grow.",
+    "te_question": "Ravi waters plants every morning. Why?",
+    "te_explanation": "నీరు మొక్కల పెరుగుదలకు సహాయపడుతుంది."
   },
   {
     "id": "LA002",
     "subject": "Language",
+    "topic": "Vocabulary",
+    "difficulty": "E",
+    "question": "Closest meaning of happy:",
+    "options": [
+      "Sad",
+      "Glad",
+      "Angry",
+      "Tired"
+    ],
+    "answer": 1,
+    "explanation": "Glad means happy.",
+    "te_question": "Closest meaning of happy:",
+    "te_explanation": "Glad అంటే సంతోషంగా."
+  },
+  {
+    "id": "LA003",
+    "subject": "Language",
+    "topic": "Vocabulary",
+    "difficulty": "E",
+    "question": "Opposite of early:",
+    "options": [
+      "Fast",
+      "Late",
+      "Quick",
+      "Soon"
+    ],
+    "answer": 1,
+    "explanation": "Late is the opposite of early.",
+    "te_question": "Opposite of early:",
+    "te_explanation": "Late అనేది early కి వ్యతిరేక పదం."
+  },
+  {
+    "id": "LA004",
+    "subject": "Language",
     "topic": "Grammar",
-    "question": "Find the noun: 'The boy runs fast.'",
-    "options": {
-      "A": "runs",
-      "B": "fast",
-      "C": "boy",
-      "D": "the"
-    },
-    "answer": "C",
-    "explanation": "Boy names a person."
+    "difficulty": "E",
+    "question": "Noun in 'The boy runs fast':",
+    "options": [
+      "runs",
+      "fast",
+      "boy",
+      "the"
+    ],
+    "answer": 2,
+    "explanation": "Boy names a person.",
+    "te_question": "Noun in 'The boy runs fast':",
+    "te_explanation": "Boy వ్యక్తిని సూచించే నామవాచకం."
+  },
+  {
+    "id": "LA005",
+    "subject": "Language",
+    "topic": "Grammar",
+    "difficulty": "E",
+    "question": "Verb in 'Birds fly in the sky':",
+    "options": [
+      "Birds",
+      "fly",
+      "sky",
+      "the"
+    ],
+    "answer": 1,
+    "explanation": "Fly shows action.",
+    "te_question": "Verb in 'Birds fly in the sky':",
+    "te_explanation": "Fly చర్యను సూచిస్తుంది."
+  },
+  {
+    "id": "LA006",
+    "subject": "Language",
+    "topic": "Grammar",
+    "difficulty": "E",
+    "question": "Pronoun in 'Rani said she was ready':",
+    "options": [
+      "Rani",
+      "said",
+      "she",
+      "ready"
+    ],
+    "answer": 2,
+    "explanation": "She replaces a name.",
+    "te_question": "Pronoun in 'Rani said she was ready':",
+    "te_explanation": "She పేరు స్థానంలో వాడే సర్వనామం."
+  },
+  {
+    "id": "LA007",
+    "subject": "Language",
+    "topic": "Grammar",
+    "difficulty": "E",
+    "question": "___ apple",
+    "options": [
+      "a",
+      "an",
+      "thee",
+      "no"
+    ],
+    "answer": 1,
+    "explanation": "Use an before the vowel sound in apple.",
+    "te_question": "___ apple",
+    "te_explanation": "apple ముందు 'an' వాడాలి."
+  },
+  {
+    "id": "LA008",
+    "subject": "Language",
+    "topic": "Vocabulary",
+    "difficulty": "E",
+    "question": "Plural of child:",
+    "options": [
+      "childs",
+      "childes",
+      "children",
+      "childrens"
+    ],
+    "answer": 2,
+    "explanation": "Children is the plural form.",
+    "te_question": "Plural of child:",
+    "te_explanation": "child యొక్క బహువచనం children."
+  },
+  {
+    "id": "LA009",
+    "subject": "Language",
+    "topic": "Grammar",
+    "difficulty": "M",
+    "question": "'She is reading' is:",
+    "options": [
+      "Past",
+      "Present continuous",
+      "Future",
+      "Simple past"
+    ],
+    "answer": 1,
+    "explanation": "It describes an action happening now.",
+    "te_question": "'She is reading' is:",
+    "te_explanation": "ప్రస్తుతం జరుగుతున్న చర్యను సూచిస్తుంది."
+  },
+  {
+    "id": "LA010",
+    "subject": "Language",
+    "topic": "Comprehension",
+    "difficulty": "M",
+    "question": "Dark clouds appear and people open umbrellas. What probably happens?",
+    "options": [
+      "It may rain",
+      "It will snow",
+      "The sun disappears forever",
+      "People swim"
+    ],
+    "answer": 0,
+    "explanation": "The clues suggest rain.",
+    "te_question": "Dark clouds appear and people open umbrellas. What probably happens?",
+    "te_explanation": "ఈ సూచనలు వర్షాన్ని సూచిస్తున్నాయి."
+  },
+  {
+    "id": "LA011",
+    "subject": "Language",
+    "topic": "Vocabulary",
+    "difficulty": "E",
+    "question": "Huge means:",
+    "options": [
+      "Very small",
+      "Very large",
+      "Very slow",
+      "Very cold"
+    ],
+    "answer": 1,
+    "explanation": "Huge means very large.",
+    "te_question": "Huge means:",
+    "te_explanation": "Huge అంటే చాలా పెద్దది."
+  },
+  {
+    "id": "LA012",
+    "subject": "Language",
+    "topic": "Grammar",
+    "difficulty": "E",
+    "question": "The book is ___ the table.",
+    "options": [
+      "on",
+      "run",
+      "happy",
+      "quick"
+    ],
+    "answer": 0,
+    "explanation": "On shows position.",
+    "te_question": "The book is ___ the table.",
+    "te_explanation": "On పుస్తకం ఉన్న స్థానాన్ని చూపిస్తుంది."
+  },
+  {
+    "id": "LA013",
+    "subject": "Language",
+    "topic": "Grammar",
+    "difficulty": "M",
+    "question": "I wanted to play, ___ it was raining.",
+    "options": [
+      "and",
+      "but",
+      "or",
+      "so"
+    ],
+    "answer": 1,
+    "explanation": "But shows contrast.",
+    "te_question": "I wanted to play, ___ it was raining.",
+    "te_explanation": "But వ్యతిరేక భావాన్ని కలుపుతుంది."
+  },
+  {
+    "id": "LA014",
+    "subject": "Language",
+    "topic": "Spelling",
+    "difficulty": "E",
+    "question": "Correct spelling:",
+    "options": [
+      "becaus",
+      "because",
+      "becouse",
+      "beacause"
+    ],
+    "answer": 1,
+    "explanation": "Because is correct.",
+    "te_question": "Correct spelling:",
+    "te_explanation": "సరైన స్పెల్లింగ్ because."
+  },
+  {
+    "id": "LA015",
+    "subject": "Language",
+    "topic": "Comprehension",
+    "difficulty": "E",
+    "question": "Meena visits the library every Saturday. What does she read?",
+    "options": [
+      "Storybooks",
+      "Maps only",
+      "Newspapers only",
+      "Recipes only"
+    ],
+    "answer": 0,
+    "explanation": "She reads storybooks.",
+    "te_question": "Meena visits the library every Saturday. What does she read?",
+    "te_explanation": "ఆమె storybooks చదువుతుంది."
+  },
+  {
+    "id": "LA016",
+    "subject": "Language",
+    "topic": "Vocabulary",
+    "difficulty": "M",
+    "question": "Opposite of ancient:",
+    "options": [
+      "Old",
+      "Modern",
+      "Past",
+      "Historic"
+    ],
+    "answer": 1,
+    "explanation": "Modern is the opposite.",
+    "te_question": "Opposite of ancient:",
+    "te_explanation": "Modern వ్యతిరేక భావాన్ని ఇస్తుంది."
+  },
+  {
+    "id": "LA017",
+    "subject": "Language",
+    "topic": "Grammar",
+    "difficulty": "M",
+    "question": "Subject in 'The little dog barked loudly':",
+    "options": [
+      "barked",
+      "loudly",
+      "dog",
+      "The little dog"
+    ],
+    "answer": 3,
+    "explanation": "The complete subject is The little dog.",
+    "te_question": "Subject in 'The little dog barked loudly':",
+    "te_explanation": "పూర్తి subject 'The little dog'."
+  },
+  {
+    "id": "LA018",
+    "subject": "Language",
+    "topic": "Grammar",
+    "difficulty": "E",
+    "question": "Word asking about a place:",
+    "options": [
+      "Who",
+      "When",
+      "Where",
+      "Why"
+    ],
+    "answer": 2,
+    "explanation": "Where asks about place.",
+    "te_question": "Word asking about a place:",
+    "te_explanation": "Where స్థలాన్ని అడుగుతుంది."
+  },
+  {
+    "id": "LA019",
+    "subject": "Language",
+    "topic": "Comprehension",
+    "difficulty": "M",
+    "question": "Trees give shade, fruits and cleaner air. Main idea?",
+    "options": [
+      "Trees are useful",
+      "Trees can talk",
+      "Trees need books",
+      "Trees are animals"
+    ],
+    "answer": 0,
+    "explanation": "The passage lists benefits of trees.",
+    "te_question": "Trees give shade, fruits and cleaner air. Main idea?",
+    "te_explanation": "పాఠ్యం చెట్ల ఉపయోగాలను చెబుతుంది."
+  },
+  {
+    "id": "LA020",
+    "subject": "Language",
+    "topic": "Grammar",
+    "difficulty": "M",
+    "question": "Correct sentence:",
+    "options": [
+      "She go to school.",
+      "She goes to school.",
+      "She going school.",
+      "She gone school."
+    ],
+    "answer": 1,
+    "explanation": "She takes goes in simple present.",
+    "te_question": "Correct sentence:",
+    "te_explanation": "Simple presentలో sheతో goes వాడాలి."
+  },
+  {
+    "id": "LA021",
+    "subject": "Language",
+    "topic": "Vocabulary",
+    "difficulty": "M",
+    "question": "Fragile means:",
+    "options": [
+      "Easily broken",
+      "Very heavy",
+      "Very tasty",
+      "Very loud"
+    ],
+    "answer": 0,
+    "explanation": "Fragile means easily broken.",
+    "te_question": "Fragile means:",
+    "te_explanation": "Fragile అంటే సులభంగా పగిలిపోయేది."
+  },
+  {
+    "id": "LA022",
+    "subject": "Language",
+    "topic": "Grammar",
+    "difficulty": "E",
+    "question": "Adjective in 'It is a bright morning':",
+    "options": [
+      "It",
+      "is",
+      "bright",
+      "morning"
+    ],
+    "answer": 2,
+    "explanation": "Bright describes morning.",
+    "te_question": "Adjective in 'It is a bright morning':",
+    "te_explanation": "Bright అనేది morning ను వర్ణిస్తుంది."
+  },
+  {
+    "id": "LA023",
+    "subject": "Language",
+    "topic": "Grammar",
+    "difficulty": "M",
+    "question": "Word telling how she ran in 'She ran quickly':",
+    "options": [
+      "She",
+      "ran",
+      "quickly",
+      "none"
+    ],
+    "answer": 2,
+    "explanation": "Quickly tells how the action happened.",
+    "te_question": "Word telling how she ran in 'She ran quickly':",
+    "te_explanation": "Quickly చర్య ఎలా జరిగిందో చెబుతుంది."
+  },
+  {
+    "id": "LA024",
+    "subject": "Language",
+    "topic": "Comprehension",
+    "difficulty": "M",
+    "question": "Seed planted, watered, then sprouted. What happened second?",
+    "options": [
+      "Planted",
+      "Watered",
+      "Sprouted",
+      "Picked fruit"
+    ],
+    "answer": 1,
+    "explanation": "Watering happened second.",
+    "te_question": "Seed planted, watered, then sprouted. What happened second?",
+    "te_explanation": "రెండవది నీరు పోయడం."
+  },
+  {
+    "id": "LA025",
+    "subject": "Language",
+    "topic": "Writing",
+    "difficulty": "M",
+    "question": "Best order: 1 packed food, 2 went to park, 3 ate lunch.",
+    "options": [
+      "1-2-3",
+      "2-1-3",
+      "3-2-1",
+      "1-3-2"
+    ],
+    "answer": 0,
+    "explanation": "That is the natural sequence.",
+    "te_question": "Best order: 1 packed food, 2 went to park, 3 ate lunch.",
+    "te_explanation": "ఇది సహజ క్రమం."
   }
 ]
