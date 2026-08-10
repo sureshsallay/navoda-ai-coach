@@ -1,63 +1,51 @@
-const CACHE = 'navodaya-v2-3';
+const CACHE_NAME = 'navodaya-ai-coach-v3';
 
-const A = [
+const FILES = [
   './',
   './index.html',
-  './app.js',
-  './manifest.json',
-  './icon-192.png',
-  './icon-512.png'
+  './app.js?v=20260810',
+  './questions.json?v=20260810',
+  './manifest.json'
 ];
 
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE)
-      .then(c => c.addAll(A))
-      .then(() => self.skipWaiting())
+self.addEventListener('install', event => {
+  self.skipWaiting();
+
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(FILES);
+    })
   );
 });
 
-self.addEventListener('activate', e => {
-  e.waitUntil(
+self.addEventListener('activate', event => {
+  event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
         keys
-          .filter(k => k !== CACHE)
-          .map(k => caches.delete(k))
+          .filter(key => key !== CACHE_NAME)
+          .map(key => caches.delete(key))
       )
     ).then(() => self.clients.claim())
   );
 });
 
-self.addEventListener('fetch', e => {
-  const url = new URL(e.request.url);
+self.addEventListener('fetch', event => {
 
-  // Always get the latest question bank
-  if (url.pathname.endsWith('/questions.json')) {
-    e.respondWith(
-      fetch(e.request, { cache: 'no-store' })
-        .catch(() => caches.match('./questions.json'))
-    );
-    return;
-  }
+  if (event.request.method !== 'GET') return;
 
-  // Always get the latest app.js
-  if (url.pathname.endsWith('/app.js')) {
-    e.respondWith(
-      fetch(e.request, { cache: 'no-store' })
-        .catch(() => caches.match('./app.js'))
-    );
-    return;
-  }
+  event.respondWith(
+    fetch(event.request)
+      .then(response => {
 
-  e.respondWith(
-    caches.match(e.request).then(cached =>
-      cached ||
-      fetch(e.request).then(response => {
         const copy = response.clone();
-        caches.open(CACHE).then(c => c.put(e.request, copy));
+
+        caches.open(CACHE_NAME).then(cache => {
+          cache.put(event.request, copy);
+        });
+
         return response;
       })
-    )
+      .catch(() => caches.match(event.request))
   );
 });
