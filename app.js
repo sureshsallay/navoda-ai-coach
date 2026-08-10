@@ -99,7 +99,7 @@ function start(a, m) {
 }
 
 function quick() {
-  start(bank.slice(0, 10), 'Quick Practice');
+  start(shuffle(bank).slice(0, 10), 'Quick Practice');
 }
 
 function mock() {
