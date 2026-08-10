@@ -29,3 +29,20 @@ function weakPractice(){
     "🎯 Weak Topic: " + weak
   );
 }
+function weakPractice(){
+  let topics = Object.entries(P.topics);
+
+  if(!topics.length){
+    alert("Take a few questions first to identify your weak topics.");
+    return;
+  }
+
+  topics.sort((a,b)=>
+    (a[1].correct/a[1].total) -
+    (b[1].correct/b[1].total)
+  );
+
+  let weak = topics[0][0];
+
+  topic(weak);
+}
