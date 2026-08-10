@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,7 +30,7 @@ body{
 
 header{
   background:linear-gradient(135deg,#173f7a,#2b5eaa);
-  color:#fff;
+  color:white;
   padding:28px 20px
 }
 
@@ -51,7 +52,7 @@ header p{
 }
 
 .card{
-  background:#fff;
+  background:white;
   border:1px solid var(--line);
   border-radius:22px;
   padding:20px;
@@ -71,7 +72,7 @@ header p{
   flex-wrap:wrap
 }
 
-button,select{
+button{
   font:inherit;
   font-weight:700;
   border:0;
@@ -82,7 +83,7 @@ button,select{
 
 button.primary{
   background:var(--b);
-  color:#fff
+  color:white
 }
 
 button.secondary{
@@ -163,6 +164,18 @@ footer{
   color:#6b7788;
   padding:28px 10px
 }
+
+/* WEAK TOPIC BUTTON */
+.weak-button{
+  background:#173f7a;
+  color:white;
+  width:100%;
+  font-size:17px;
+}
+
+.weak-button:hover{
+  background:#2b5eaa;
+}
 </style>
 </head>
 
@@ -175,7 +188,8 @@ footer{
 
 <main class="wrap">
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
+
 <section id="home">
 
 <div class="card">
@@ -190,22 +204,30 @@ footer{
 <button class="primary" onclick="quick()">
 ⚡ Quick Practice
 <br>
-<span class="small" style="color:#dbe8ff">10 questions</span>
+<span class="small" style="color:#dbe8ff">
+10 questions
+</span>
 </button>
 
 <button class="primary" onclick="mock()">
 📝 Mock Test
 <br>
-<span class="small" style="color:#dbe8ff">20 questions</span>
+<span class="small" style="color:#dbe8ff">
+20 questions
+</span>
 </button>
+
 <button class="secondary" onclick="topics()">
 📚 Topic Practice
 </button>
 
-<button class="primary" onclick="weakPractice()">
+<!-- WEAK TOPIC BUTTON -->
+<button class="weak-button" onclick="weakPractice()">
 🎯 Practice My Weak Topic
 <br>
-<span class="small" style="color:#dbe8ff">Smart practice</span>
+<span class="small" style="color:#dbe8ff">
+Smart practice
+</span>
 </button>
 
 <button class="secondary" onclick="progressPage()">
@@ -250,7 +272,8 @@ View Progress
 </section>
 
 
-<!-- QUIZ -->
+<!-- ================= QUIZ ================= -->
+
 <section id="quiz" class="hidden">
 
 <div class="row" style="justify-content:space-between">
@@ -286,7 +309,8 @@ Next
 </section>
 
 
-<!-- RESULT -->
+<!-- ================= RESULT ================= -->
+
 <section id="result" class="hidden">
 
 <div class="card">
@@ -320,7 +344,8 @@ Home
 </section>
 
 
-<!-- TOPICS -->
+<!-- ================= TOPICS ================= -->
+
 <section id="topics" class="hidden">
 
 <div class="card">
@@ -342,7 +367,8 @@ Home
 </section>
 
 
-<!-- PROGRESS -->
+<!-- ================= PROGRESS ================= -->
+
 <section id="progress" class="hidden">
 
 <div class="card">
@@ -363,17 +389,22 @@ Home
 
 <div id="weak"></div>
 
-<div class="row">
+<br>
 
-<button class="primary" onclick="weakPractice()">
+<!-- WEAK TOPIC BUTTON ALSO HERE -->
+<button class="weak-button" onclick="weakPractice()">
 🎯 Practice My Weak Topic
+<br>
+<span class="small" style="color:#dbe8ff">
+Start practice from your weakest topic
+</span>
 </button>
+
+<br><br>
 
 <button class="danger" onclick="resetP()">
 Reset Progress
 </button>
-
-</div>
 
 </div>
 
