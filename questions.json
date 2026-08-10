@@ -861,10 +861,10 @@
       "700",
       "7,000"
     ],
-    "answer": 2,
-    "explanation": "7 is in the hundreds place.",
+    "answer": 3,
+    "explanation": "7 is in the thousands place.",
     "te_question": "Place value of 7 in 57,432:",
-    "te_explanation": "7 వందల స్థానంలో ఉంది."
+    "te_explanation": "7 వేల స్థానంలో ఉంది."
   },
   {
     "id": "AR002",
