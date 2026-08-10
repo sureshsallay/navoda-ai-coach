@@ -864,7 +864,7 @@
     "answer": 3,
     "explanation": "7 is in the thousands place.",
     "te_question": "Place value of 7 in 57,432:",
-    "te_explanation": "7 వేల స్థానంలో ఉంది." కాబట్టి స్థాన విలువ 7000 అవుతుంది.
+    "te_explanation": "7 వేల స్థానంలో ఉంది. కాబట్టి స్థాన విలువ 7000 అవుతుంది."
   },
   {
     "id": "AR002",
