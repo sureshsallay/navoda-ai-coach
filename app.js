@@ -1,518 +1,320 @@
-let bank = [], quiz = [], i = 0, score = 0, mode = '', answers = [], started = 0, te = false;
+let bank=[],quiz=[],i=0,score=0,mode="",answers=[],started=0,te=false;
 
-let P = JSON.parse(
-  localStorage.getItem('navP2') ||
-  '{"attempts":0,"correct":0,"answered":0,"topics":{}}'
-);
+let P=JSON.parse(localStorage.getItem("navP2")||'{"attempts":0,"correct":0,"answered":0,"topics":{}}');
 
-async function init() {
-  try {
-    bank = await fetch('questions.json?v=2', {
-      cache: 'no-store'
-    }).then(r => r.json());
+const $=id=>document.getElementById(id);
+
+function fixText(s){
+  if(!s)return "";
+  try{
+    if(/à|á|â|ã|ä|å|°|±|²|³/.test(s))
+      return decodeURIComponent(escape(s));
+  }catch(e){}
+  return s;
+}
+
+async function init(){
+  try{
+    let r=await fetch("questions.json?v="+Date.now(),{cache:"no-store"});
+    if(!r.ok)throw Error();
+    bank=await r.json();
+
+    bank=bank.map(q=>({
+      ...q,
+      subject:fixText(q.subject),
+      topic:fixText(q.topic),
+      question:fixText(q.question),
+      te_question:fixText(q.te_question),
+      explanation:fixText(q.explanation),
+      te_explanation:fixText(q.te_explanation),
+      options:(q.options||[]).map(fixText)
+    }));
 
     subjects();
     net();
-    $('coach').textContent = coachText();
-
-  } catch (e) {
-    alert('Questions could not be loaded. Please check questions.json');
+    $("coach").textContent=coachText();
+  }catch(e){
+    alert("questions.json could not be loaded.");
   }
 }
 
-function $(x) {
-  return document.getElementById(x);
+function net(){
+  $("net").textContent=navigator.onLine?
+    "🟢 Online + Offline-ready":"🔌 Offline mode";
 }
 
-function net() {
-  $('net').textContent =
-    navigator.onLine
-      ? '🟢 Online + Offline-ready'
-      : '🔌 Offline mode';
+addEventListener("online",net);
+addEventListener("offline",net);
+
+function hide(){
+  ["home","quiz","result","topics","progress"]
+  .forEach(x=>$(x).classList.add("hidden"));
 }
 
-addEventListener('online', net);
-addEventListener('offline', net);
-
-function hide() {
-  ['home', 'quiz', 'result', 'topics', 'progress']
-    .forEach(x => $(x).classList.add('hidden'));
-}
-
-function home() {
+function home(){
   hide();
-  $('home').classList.remove('hidden');
-  $('coach').textContent = coachText();
+  $("home").classList.remove("hidden");
+  $("coach").textContent=coachText();
 }
 
-function shuffle(a) {
-  return [...a].sort(() => Math.random() - 0.5);
+function shuffle(a){
+  return [...a].sort(()=>Math.random()-.5);
 }
 
-function icon(s) {
-  return s.includes('Mental')
-    ? '🧠'
-    : s.includes('Arithmetic')
-    ? '➗'
-    : s.includes('Language')
-    ? '📖'
-    : '🌱';
+function icon(s){
+  s=s||"";
+  if(s.includes("Mental"))return"🧠";
+  if(s.includes("Arithmetic"))return"➗";
+  if(s.includes("Language"))return"📖";
+  return"🌱";
 }
 
-function subjects() {
-  let c = {};
+function subjects(){
+  let c={};
+  bank.forEach(q=>c[q.subject]=(c[q.subject]||0)+1);
 
-  bank.forEach(q => {
-    c[q.subject] = (c[q.subject] || 0) + 1;
-  });
-
-  $('subjects').innerHTML =
-    Object.entries(c).map(([s, n]) => `
-      <button class="secondary" onclick="subject(${JSON.stringify(s)})">
-        ${icon(s)} ${s}<br>
-        <span class="small">${n} questions</span>
-      </button>
-    `).join('');
+  $("subjects").innerHTML=Object.entries(c).map(([s,n])=>`
+    <button class="secondary" onclick='subject(${JSON.stringify(s)})'>
+      ${icon(s)} ${s}<br>
+      <span class="small">${n} questions</span>
+    </button>
+  `).join("");
 }
 
-/* =========================
-   START QUIZ
-========================= */
+/* ---------- PRACTICE ---------- */
 
-function start(a, m) {
-  if (!a || !a.length) {
-    alert('No questions available for this practice.');
+function start(list,m){
+  if(!list.length){
+    alert("No questions available.");
     return;
   }
 
-  mode = m;
-  quiz = shuffle(a);
-  i = 0;
-  score = 0;
-  answers = [];
-  started = Date.now();
+  mode=m;
+  quiz=shuffle(list);
+  i=0;
+  score=0;
+  answers=[];
+  started=Date.now();
 
   hide();
-  $('quiz').classList.remove('hidden');
-
+  $("quiz").classList.remove("hidden");
   render();
 }
 
-function quick() {
-  start(shuffle(bank).slice(0, 10), 'Quick Practice');
+function quick(){
+  start(shuffle(bank).slice(0,10),"Quick Practice");
 }
 
-function mock() {
-  let q = shuffle(bank).slice(0, 20);
-  start(q, 'Mock Test');
+function mock(){
+  start(shuffle(bank).slice(0,20),"Mock Test");
 }
 
-function subject(s) {
-  let q = bank.filter(x => x.subject === s).slice(0, 10);
-  start(q, 'Subject: ' + s);
+function subject(s){
+  start(bank.filter(q=>q.subject===s).slice(0,10),"Subject: "+s);
 }
 
-function topic(t) {
-  let q = bank.filter(x => x.topic === t).slice(0, 10);
-  start(q, 'Topic: ' + t);
+function topic(t){
+  start(bank.filter(q=>q.topic===t).slice(0,10),"Topic: "+t);
 }
 
-/* =========================
-   WEAK TOPIC PRACTICE
-========================= */
+/* ---------- WEAK TOPIC ---------- */
 
-function weakPractice() {
+function weakPractice(){
 
-  let topics = Object.entries(P.topics);
+  let data=Object.entries(P.topics)
+    .filter(([t,v])=>v&&v.total>0)
+    .map(([t,v])=>({
+      topic:t,
+      total:v.total,
+      correct:v.correct||0,
+      accuracy:(v.correct||0)/v.total
+    }));
 
-  if (!topics.length) {
+  if(!data.length){
     alert(
-      'You do not have enough practice data yet.\n\n' +
-      'Take a Quick Practice or Mock Test first.'
+      "🎯 No weak-topic data yet.\n\n"+
+      "Complete a Quick Practice or Mock Test first."
     );
     return;
   }
 
-  // Find topic with lowest accuracy
-  topics.sort((a, b) => {
+  /* Prefer topics with enough attempts */
+  let reliable=data.filter(x=>x.total>=3);
+  let list=reliable.length?reliable:data;
 
-    let accA = a[1].total
-      ? a[1].correct / a[1].total
-      : 0;
+  list.sort((a,b)=>
+    a.accuracy-b.accuracy ||
+    b.total-a.total
+  );
 
-    let accB = b[1].total
-      ? b[1].correct / b[1].total
-      : 0;
+  let weak=list[0];
 
-    return accA - accB;
-  });
+  let qs=bank.filter(q=>
+    q.topic.trim().toLowerCase()===
+    weak.topic.trim().toLowerCase()
+  );
 
-  let weakTopic = topics[0][0];
-
-  let weakQuestions =
-    bank.filter(q => q.topic === weakTopic);
-
-  if (!weakQuestions.length) {
-    alert('No questions found for your weak topic.');
+  if(!qs.length){
+    alert("Questions for this topic are not available.");
     return;
   }
-
-  alert(
-    '🎯 Your weakest topic is:\n\n' +
-    weakTopic +
-    '\n\nStarting practice now!'
-  );
 
   start(
-    shuffle(weakQuestions).slice(0, 10),
-    '🎯 Weak Topic: ' + weakTopic
+    shuffle(qs).slice(0,Math.min(10,qs.length)),
+    "🎯 Weak Topic: "+weak.topic
   );
 }
 
-/* =========================
-   QUESTION DISPLAY
-========================= */
+/* ---------- QUESTION ---------- */
 
-function render() {
+function render(){
 
-  let x = quiz[i];
+  let q=quiz[i];
 
-  $('meta').textContent =
-    `${mode} • ${i + 1}/${quiz.length}`;
+  $("meta").textContent=
+    `${mode} • ${i+1}/${quiz.length}`;
 
-  $('bar').style.width =
-    (i / quiz.length * 100) + '%';
+  $("bar").style.width=
+    ((i+1)/quiz.length*100)+"%";
 
-  $('label').textContent =
-    `${icon(x.subject)} ${x.subject} • ${x.topic} • ${x.difficulty}`;
+  $("label").textContent=
+    `${icon(q.subject)} ${q.subject} • ${q.topic} • ${q.difficulty}`;
 
-  $('q').textContent =
-    te
-      ? (x.te_question || x.question)
-      : x.question;
+  $("q").textContent=
+    te?(q.te_question||q.question):q.question;
 
-  $('opts').innerHTML =
-    x.options.map((o, n) => `
-      <button class="option" onclick="choose(${n})">
-        ${String.fromCharCode(65 + n)}. ${o}
-      </button>
-    `).join('');
+  $("opts").innerHTML=(q.options||[]).map((o,n)=>`
+    <button class="option" onclick="choose(${n})">
+      ${String.fromCharCode(65+n)}. ${o}
+    </button>
+  `).join("");
 
-  $('next').disabled = true;
-
-  $('exp').classList.add('hidden');
+  $("next").disabled=true;
+  $("exp").classList.add("hidden");
 }
 
-/* =========================
-   ANSWER
-========================= */
+/* ---------- ANSWER ---------- */
 
-function choose(n) {
+function choose(n){
 
-  let x = quiz[i];
+  let q=quiz[i];
+  let buttons=[...document.querySelectorAll(".option")];
+  buttons.forEach(b=>b.disabled=true);
 
-  let bs =
-    [...document.querySelectorAll('.option')];
+  let ok=n===q.answer;
 
-  bs.forEach(b => b.disabled = true);
-
-  let correct = n === x.answer;
-
-  if (correct) {
+  if(ok){
     score++;
-    bs[n].classList.add('correct');
-  } else {
-    bs[n].classList.add('wrong');
-
-    if (bs[x.answer]) {
-      bs[x.answer].classList.add('correct');
-    }
+    buttons[n].classList.add("correct");
+  }else{
+    buttons[n].classList.add("wrong");
+    if(buttons[q.answer])
+      buttons[q.answer].classList.add("correct");
   }
 
-  answers.push({
-    x: x,
-    ok: correct
-  });
+  answers.push({q,ok});
 
-  $('next').disabled = false;
+  $("next").disabled=false;
+  $("exp").classList.remove("hidden");
 
-  $('exp').classList.remove('hidden');
-
-  $('exp').innerHTML =
-    `<b>💡 ${
-      te
-        ? (x.te_explanation || x.explanation)
-        : x.explanation
-    }</b>`;
+  $("exp").innerHTML=
+    `<b>💡 ${te?
+      (q.te_explanation||q.explanation):
+      q.explanation}</b>`;
 }
 
-/* =========================
-   NEXT QUESTION
-========================= */
-
-function next() {
-
-  i++;
-
-  if (i >= quiz.length) {
-    finish();
-  } else {
-    render();
-  }
+function next(){
+  if(++i<quiz.length)render();
+  else finish();
 }
 
-/* =========================
-   FINISH
-========================= */
+/* ---------- RESULT ---------- */
 
-function finish() {
+function finish(){
 
   P.attempts++;
-  P.correct += score;
-  P.answered += quiz.length;
+  P.correct+=score;
+  P.answered+=quiz.length;
 
-  answers.forEach(a => {
+  answers.forEach(a=>{
+    let t=a.q.topic;
 
-    let t = a.x.topic;
-
-    if (!P.topics[t]) {
-      P.topics[t] = {
-        correct: 0,
-        total: 0
-      };
-    }
+    if(!P.topics[t])
+      P.topics[t]={correct:0,total:0};
 
     P.topics[t].total++;
-
-    if (a.ok) {
-      P.topics[t].correct++;
-    }
+    if(a.ok)P.topics[t].correct++;
   });
 
-  localStorage.setItem(
-    'navP2',
-    JSON.stringify(P)
-  );
+  localStorage.setItem("navP2",JSON.stringify(P));
 
-  let acc =
-    Math.round(score / quiz.length * 100);
-
-  let secs =
-    Math.round((Date.now() - started) / 1000);
+  let acc=Math.round(score/quiz.length*100);
+  let sec=Math.round((Date.now()-started)/1000);
 
   hide();
+  $("result").classList.remove("hidden");
 
-  $('result').classList.remove('hidden');
-
-  $('stats').innerHTML = `
-    <div class="stat">
-      Score
-      <b>${score}/${quiz.length}</b>
-    </div>
-
-    <div class="stat">
-      Accuracy
-      <b>${acc}%</b>
-    </div>
-
-    <div class="stat">
-      Time
-      <b>${Math.floor(secs / 60)}m ${secs % 60}s</b>
-    </div>
+  $("stats").innerHTML=`
+    <div class="stat">Score<b>${score}/${quiz.length}</b></div>
+    <div class="stat">Accuracy<b>${acc}%</b></div>
+    <div class="stat">Time<b>${Math.floor(sec/60)}m ${sec%60}s</b></div>
   `;
 
-  $('rec').textContent = rec(acc);
+  $("rec").textContent=rec(acc);
 
-  let t = {};
+  let t={};
 
-  answers.forEach(a => {
-
-    let k = a.x.topic;
-
-    if (!t[k]) {
-      t[k] = {
-        c: 0,
-        n: 0
-      };
-    }
-
+  answers.forEach(a=>{
+    let k=a.q.topic;
+    if(!t[k])t[k]={c:0,n:0};
     t[k].n++;
-
-    if (a.ok) {
-      t[k].c++;
-    }
+    if(a.ok)t[k].c++;
   });
 
-  $('analysis').innerHTML =
-    Object.entries(t).map(([k, v]) => `
-      <div class="stat" style="margin:7px 0">
-        <b style="font-size:18px">${k}</b>
-        ${v.c}/${v.n} correct —
-        ${Math.round(v.c / v.n * 100)}%
-      </div>
-    `).join('');
+  $("analysis").innerHTML=Object.entries(t).map(([k,v])=>`
+    <div class="stat" style="margin:7px 0">
+      <b style="font-size:18px">${k}</b>
+      ${v.c}/${v.n} correct —
+      ${Math.round(v.c/v.n*100)}%
+    </div>
+  `).join("");
 
-  $('coach').textContent =
-    coachText();
+  $("coach").textContent=coachText();
 }
 
-/* =========================
-   RECOMMENDATION
-========================= */
-
-function rec(a) {
-
-  return a >= 90
-    ? 'Excellent — move to harder sets and full mocks.'
-    : a >= 75
-    ? 'Strong — mix timed tests with weak-topic practice.'
-    : a >= 50
-    ? 'Good start — revise weak topics and try again.'
-    : 'Keep practising — focus on explanations and weak topics.';
+function rec(a){
+  if(a>=90)return"Excellent — move to harder sets and full mocks.";
+  if(a>=75)return"Strong — practise weak topics and timed tests.";
+  if(a>=50)return"Good start — revise weak topics and try again.";
+  return"Keep practising — focus on your weakest topics.";
 }
 
-function coachText() {
+function coachText(){
 
-  if (!P.answered) {
-    return 'Take a test to get a recommendation.';
-  }
+  if(!P.answered)
+    return"Take a test to get a recommendation.";
 
-  let a =
-    Math.round(P.correct / P.answered * 100);
+  let a=Math.round(P.correct/P.answered*100);
 
-  return `Overall accuracy: ${a}%. ${rec(a)}`;
+  let w=Object.entries(P.topics)
+    .filter(([t,v])=>v.total>=3)
+    .sort((a,b)=>
+      a[1].correct/a[1].total-
+      b[1].correct/b[1].total
+    )[0];
+
+  return w?
+    `Overall accuracy: ${a}%. Focus next on "${w[0]}".`:
+    `Overall accuracy: ${a}%. ${rec(a)}`;
 }
 
-/* =========================
-   TOPICS
-========================= */
+/* ---------- TOPICS ---------- */
 
-function topics() {
+function topics(){
 
   hide();
+  $("topics").classList.remove("hidden");
 
-  $('topics').classList.remove('hidden');
+  let ts=[...new Set(bank.map(q=>q.topic))].sort();
 
-  let ts =
-    [...new Set(bank.map(q => q.topic))].sort();
-
-  $('topicList').innerHTML =
-    ts.map(t => `
-      <button class="secondary"
-        onclick="topic(${JSON.stringify(t)})">
-        ${t}
-      </button>
-    `).join('');
-}
-
-/* =========================
-   PROGRESS
-========================= */
-
-function progressPage() {
-
-  hide();
-
-  $('progress').classList.remove('hidden');
-
-  let a =
-    P.answered
-      ? Math.round(P.correct / P.answered * 100)
-      : 0;
-
-  $('pstats').innerHTML = `
-    <div class="stat">
-      Attempts
-      <b>${P.attempts}</b>
-    </div>
-
-    <div class="stat">
-      Questions
-      <b>${P.answered}</b>
-    </div>
-
-    <div class="stat">
-      Accuracy
-      <b>${a}%</b>
-    </div>
-  `;
-
-  let w =
-    Object.entries(P.topics)
-      .sort((a, b) =>
-        a[1].correct / a[1].total -
-        b[1].correct / b[1].total
-      )
-      .slice(0, 6);
-
-  $('weak').innerHTML =
-    w.length
-      ? w.map(([t, v]) => `
-          <div class="stat" style="margin:7px 0">
-            <b style="font-size:18px">${t}</b>
-            ${v.correct}/${v.total} correct —
-            ${Math.round(v.correct / v.total * 100)}%
-          </div>
-        `).join('')
-      : 'No data yet.';
-}
-
-/* =========================
-   RESET
-========================= */
-
-function resetP() {
-
-  if (confirm('Reset progress on this device?')) {
-
-    P = {
-      attempts: 0,
-      correct: 0,
-      answered: 0,
-      topics: {}
-    };
-
-    localStorage.setItem(
-      'navP2',
-      JSON.stringify(P)
-    );
-
-    progressPage();
-  }
-}
-
-/* =========================
-   LANGUAGE
-========================= */
-
-function lang() {
-
-  te = !te;
-
-  alert(
-    te
-      ? 'తెలుగు ప్రశ్న మోడ్'
-      : 'English question mode'
-  );
-
-  if (!$('quiz').classList.contains('hidden')) {
-    render();
-  }
-}
-
-/* =========================
-   START APP
-========================= */
-
-init();
-
-/* =========================
-   OFFLINE SUPPORT
-========================= */
-
-if ('serviceWorker' in navigator) {
-
-  navigator.serviceWorker
-    .register('service-worker.js')
-    .catch(() => {});
-}
+  $("topicList").
